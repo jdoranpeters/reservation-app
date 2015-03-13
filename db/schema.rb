@@ -11,22 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311015409) do
+ActiveRecord::Schema.define(version: 20150311233414) do
 
   create_table "boats", force: :cascade do |t|
-    t.string   "image_url",              limit: 255
-    t.string   "name",                   limit: 255
-    t.string   "make",                   limit: 255
-    t.integer  "size",                   limit: 4
-    t.integer  "shares_possible",        limit: 4
-    t.decimal  "full_share_price",                   precision: 6, scale: 2
-    t.decimal  "two_thirds_share_price",             precision: 6, scale: 2
-    t.integer  "half_day_credits",       limit: 4
-    t.integer  "full_day_credits",       limit: 4
-    t.integer  "multi_day_credits",      limit: 4
+    t.string   "image_url",                limit: 255
+    t.string   "name",                     limit: 255
+    t.string   "make",                     limit: 255
+    t.integer  "size",                     limit: 4
+    t.integer  "shares_possible",          limit: 4
+    t.decimal  "full_share_price",                     precision: 6, scale: 2
+    t.decimal  "two_thirds_share_price",               precision: 6, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "harbor",                 limit: 255
+    t.string   "harbor",                   limit: 255
+    t.integer  "half_credit_AM_MTWTH",     limit: 4
+    t.integer  "half_credit_PM_MTWTH",     limit: 4
+    t.integer  "half_credit_AM_F",         limit: 4
+    t.integer  "half_credit_PM_F",         limit: 4
+    t.integer  "half_credit_AM_SAT",       limit: 4
+    t.integer  "half_credit_PM_SAT",       limit: 4
+    t.integer  "half_credit_AM_SUN",       limit: 4
+    t.integer  "half_credit_PM_SUN",       limit: 4
+    t.integer  "full_credit_MTWTH",        limit: 4
+    t.integer  "full_credit_F",            limit: 4
+    t.integer  "full_credit_SAT",          limit: 4
+    t.integer  "full_credit_SUN",          limit: 4
+    t.integer  "two_thirds_credits_total", limit: 4
+    t.integer  "full_credits_total",       limit: 4
   end
 
   create_table "events", force: :cascade do |t|

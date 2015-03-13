@@ -1,15 +1,16 @@
+<div class="container">
 <h1>Edit this Boat</h1>
 
 <%= form_tag("/boats/#{@boat.id}", :method => :patch) do %>
-  <div id="form-div">
-	 <div class="inner_div">
-	 <%= label_tag :image %>
-   <%= text_field_tag :image %>
-   </div>
+    <div id="form-div">
+    <div class="inner_div">
+    <%= label_tag :image_url %>
+    <%= text_field_tag :image_url %>
+    </div>
     
     <div class="inner_div">
     <%= label_tag :name %>
-      <%= text_field_tag :name %>
+    <%= text_field_tag :name %>
     </div>
     
     <div class="inner_div">
@@ -18,7 +19,7 @@
     </div>
     
     <div class="inner_div">
-    <%= label_tag :size %>
+      <%= label_tag :size %>
       <%= text_field_tag :size %>
     </div>
     
@@ -43,18 +44,61 @@
     </div>
 
     <div class="inner_div">
-      <%= label_tag :half_day_credits %>
-      <%= text_field_tag :half_day_credits %>
+      <%= label_tag :half_credit_AM_MTWTH %>
+      <%= text_field_tag :half_credit_AM_MTWTH %>
     </div>
 
     <div class="inner_div">
-      <%= label_tag :full_day_credits %>
-      <%= text_field_tag :full_day_credits %>
+      <%= label_tag :half_credit_PM_MTWTH %>
+      <%= text_field_tag :half_credit_PM_MTWTH %>
     </div>
-
     <div class="inner_div">
-      <%= label_tag :multi_day_credits %>
-      <%= text_field_tag :multi_day_credits %>
+      <%= label_tag :half_credit_AM_F %>
+      <%= text_field_tag :half_credit_AM_F %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_PM_F %>
+      <%= text_field_tag :half_credit_PM_F %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_AM_SAT %>
+      <%= text_field_tag :half_credit_AM_SAT %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_PM_SAT %>
+      <%= text_field_tag :half_credit_PM_SAT %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_AM_SUN %>
+      <%= text_field_tag :half_credit_AM_SUN %>
+    </div>
+     <div class="inner_div">
+      <%= label_tag :half_credit_PM_SUN %>
+      <%= text_field_tag :half_credit_PM_SUN %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_MTWTH %>
+      <%= text_field_tag :full_credit_MTWTH %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_F %>
+      <%= text_field_tag :full_credit_F %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_SAT%>
+      <%= text_field_tag :full_credit_SAT %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_SUN %>
+      <%= text_field_tag :full_credit_SUN %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :two_thirds_credits_total %>
+      <%= text_field_tag :two_thirds_credits_total %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credits_total %>
+      <%= text_field_tag :full_credits_total %>
     </div>
   </div>
   <div>
@@ -63,3 +107,4 @@
 
 
 <% end %>
+</div>
