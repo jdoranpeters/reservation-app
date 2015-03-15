@@ -4,101 +4,101 @@
 <%= form_tag("/boats/#{@boat.id}", :method => :patch) do %>
     <div id="form-div">
     <div class="inner_div">
-    <%= label_tag :image_url %>
-    <%= text_field_tag :image_url %>
+    <%= label_tag %> Image <br />
+    <%= text_field_tag :image_url, @boat.image_url %>
     </div>
     
     <div class="inner_div">
-    <%= label_tag :name %>
-    <%= text_field_tag :name %>
+    <%= label_tag %> Name <br />
+    <%= text_field_tag :name, @boat.name %>
     </div>
     
     <div class="inner_div">
-      <%= label_tag :make %>
-      <%= text_field_tag :make %>
+      <%= label_tag %> Make <br />
+      <%= text_field_tag :make, @boat.make %>
     </div>
     
     <div class="inner_div">
-      <%= label_tag :size %>
-      <%= text_field_tag :size %>
+      <%= label_tag %> Size <br />
+      <%= text_field_tag :size, @boat.size %>
     </div>
     
     <div class="inner_div">
-      <%= label_tag :harbor %>
-      <%= text_field_tag :harbor %>
+      <%= label_tag %> Harbor <br />
+      <%= text_field_tag :harbor, @boat.harbor %>
     </div>
 
      <div class="inner_div">
-      <%= label_tag :shares_possible %>
-      <%= text_field_tag :shares_possible %>
+      <%= label_tag %> Shares Possible  <br />
+      <%= text_field_tag :shares_possible, @boat.shares_possible %>
     </div>
 
      <div class="inner_div">
-      <%= label_tag :full_share_price %>
-      <%= text_field_tag :full_share_price %>
+      <%= label_tag %> Full Share Price <br />
+      <%= text_field_tag :full_share_price, @boat.full_share_price %>
     </div>
 
      <div class="inner_div">
-      <%= label_tag :two_thirds_share_price %>
-      <%= text_field_tag :two_thirds_share_price %>
+      <%= label_tag %> Two-Thirds Share Price <br />
+      <%= text_field_tag :two_thirds_share_price, @boat.two_thirds_share_price %>
     </div>
 
     <div class="inner_div">
-      <%= label_tag :half_credit_AM_MTWTH %>
-      <%= text_field_tag :half_credit_AM_MTWTH %>
+      <%= label_tag %> Half Credit am MTWTH <br />
+      <%= text_field_tag :half_credit_AM_MTWTH, @boat.half_credit_AM_MTWTH %>
     </div>
 
     <div class="inner_div">
-      <%= label_tag :half_credit_PM_MTWTH %>
-      <%= text_field_tag :half_credit_PM_MTWTH %>
+      <%= label_tag %> Half Credit pm MTWTH <br />
+      <%= text_field_tag :half_credit_PM_MTWTH, @boat.half_credit_PM_MTWTH%>
     </div>
     <div class="inner_div">
-      <%= label_tag :half_credit_AM_F %>
-      <%= text_field_tag :half_credit_AM_F %>
+      <%= label_tag %> Half Credit am Fri <br />
+      <%= text_field_tag :half_credit_AM_F, @boat.half_credit_AM_F %>
     </div>
     <div class="inner_div">
-      <%= label_tag :half_credit_PM_F %>
-      <%= text_field_tag :half_credit_PM_F %>
+      <%= label_tag %> Half Credit pm Fri <br />
+      <%= text_field_tag :half_credit_PM_F, @boat.half_credit_PM_F %>
     </div>
     <div class="inner_div">
-      <%= label_tag :half_credit_AM_SAT %>
-      <%= text_field_tag :half_credit_AM_SAT %>
+      <%= label_tag %> Half Credit am Sat <br />
+      <%= text_field_tag :half_credit_AM_SAT, @boat.half_credit_AM_SAT %>
     </div>
     <div class="inner_div">
-      <%= label_tag :half_credit_PM_SAT %>
-      <%= text_field_tag :half_credit_PM_SAT %>
+      <%= label_tag %> Half Credit pm Sat <br />
+      <%= text_field_tag :half_credit_PM_SAT, @boat.half_credit_PM_SAT %>
     </div>
     <div class="inner_div">
-      <%= label_tag :half_credit_AM_SUN %>
-      <%= text_field_tag :half_credit_AM_SUN %>
+      <%= label_tag %> Half Credit am Sun <br />
+      <%= text_field_tag :half_credit_AM_SUN, @boat.half_credit_PM_SAT %>
     </div>
      <div class="inner_div">
-      <%= label_tag :half_credit_PM_SUN %>
-      <%= text_field_tag :half_credit_PM_SUN %>
+      <%= label_tag %> Half Credit pm Sun <br />
+      <%= text_field_tag :half_credit_PM_SUN, @boat.half_credit_PM_SUN %>
     </div>
     <div class="inner_div">
-      <%= label_tag :full_credit_MTWTH %>
-      <%= text_field_tag :full_credit_MTWTH %>
+      <%= label_tag %> Full Credit MTWTH <br />
+      <%= text_field_tag :full_credit_MTWTH, @boat.full_credit_MTWTH %>
     </div>
     <div class="inner_div">
-      <%= label_tag :full_credit_F %>
-      <%= text_field_tag :full_credit_F %>
+      <%= label_tag %> Full Credit Fri <br />
+      <%= text_field_tag :full_credit_F, @boat.full_credit_F %>
     </div>
     <div class="inner_div">
-      <%= label_tag :full_credit_SAT%>
-      <%= text_field_tag :full_credit_SAT %>
+      <%= label_tag %>Full Credit Sat <br />
+      <%= text_field_tag :full_credit_SAT, @boat.full_credit_SAT %>
     </div>
     <div class="inner_div">
-      <%= label_tag :full_credit_SUN %>
-      <%= text_field_tag :full_credit_SUN %>
+      <%= label_tag %> Full Credit Sun <br />
+      <%= text_field_tag :full_credit_SUN, @boat.full_credit_SUN %>
     </div>
     <div class="inner_div">
-      <%= label_tag :two_thirds_credits_total %>
-      <%= text_field_tag :two_thirds_credits_total %>
+      <%= label_tag %>  Two-Thirds Credits Total <br />
+      <%= text_field_tag :two_thirds_credits_total, @boat.two_thirds_credits_total %>
     </div>
     <div class="inner_div">
-      <%= label_tag :full_credits_total %>
-      <%= text_field_tag :full_credits_total %>
+      <%= label_tag %> Full Credits Total <br />
+      <%= text_field_tag :full_credits_total, @boat.full_credits_total %>
     </div>
   </div>
   <div>

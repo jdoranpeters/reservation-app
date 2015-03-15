@@ -7,9 +7,9 @@ class BoatsController < ApplicationController
 	def show
  		@boat = Boat.find(params[:id])
 		# need to add this lease notice feature later
-		if @boat.shares_possible < 1
-			flash[:notice] = "Sorry, all the shares for this vessel are taken at this time. Please check back soon."
- 		end
+		# if @boat.shares_possible < 1
+		# 	flash[:notice] = "Sorry, all the shares for this vessel are taken at this time. Please check back soon."
+ 	# 	end
 	end
 
 
@@ -28,7 +28,7 @@ class BoatsController < ApplicationController
 
 	def edit
 		if user_signed_in? && current_user.admin?
-			@boat = Boat.find(params[:id])
+			@boat = Boat.find_by(:id => params[:id])
 		else render :file => "/public/404.html", :status => 404
 		end
 	end
