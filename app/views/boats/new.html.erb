@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <h1>Enter a New Boat</h1>
 
 <%=form_tag '/boats' do %>
@@ -43,22 +44,65 @@
     </div>
 
     <div class="inner_div">
-      <%= label_tag :half_day_credits %>
-      <%= text_field_tag :half_day_credits %>
+      <%= label_tag :half_credit_AM_MTWTH %>
+      <%= text_field_tag :half_credit_AM_MTWTH %>
     </div>
 
     <div class="inner_div">
-      <%= label_tag :full_day_credits %>
-      <%= text_field_tag :full_day_credits %>
+      <%= label_tag :half_credit_PM_MTWTH %>
+      <%= text_field_tag :half_credit_PM_MTWTH %>
     </div>
-
     <div class="inner_div">
-      <%= label_tag :multi_day_credits %>
-      <%= text_field_tag :multi_day_credits %>
+      <%= label_tag :half_credit_AM_F %>
+      <%= text_field_tag :half_credit_AM_F %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_PM_F %>
+      <%= text_field_tag :half_credit_PM_F %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_AM_SAT %>
+      <%= text_field_tag :half_credit_AM_SAT %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_PM_SAT %>
+      <%= text_field_tag :half_credit_PM_SAT %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :half_credit_AM_SUN %>
+      <%= text_field_tag :half_credit_AM_SUN %>
+    </div>
+     <div class="inner_div">
+      <%= label_tag :half_credit_PM_SUN %>
+      <%= text_field_tag :half_credit_PM_SUN %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_MTWTH %>
+      <%= text_field_tag :full_credit_MTWTH %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_F %>
+      <%= text_field_tag :full_credit_F %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_SAT%>
+      <%= text_field_tag :full_credit_SAT %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credit_SUN %>
+      <%= text_field_tag :full_credit_SUN %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :two_thirds_credits_total %>
+      <%= text_field_tag :two_thirds_credits_total %>
+    </div>
+    <div class="inner_div">
+      <%= label_tag :full_credits_total %>
+      <%= text_field_tag :full_credits_total %>
     </div>
   </div>
   </div>
     <%= submit_tag "Add Boat", :class => "add_boat_button" %>
   </div>
-
+</div>
 <% end %>

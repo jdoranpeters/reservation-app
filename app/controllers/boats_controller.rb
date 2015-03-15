@@ -10,6 +10,9 @@ class BoatsController < ApplicationController
 
 
 	def new
+		if user_signed_in? && current_user.admin?
+		else render :file => "/public/404.html", :status => 404
+	 end
 	end
 
 	def create
@@ -20,7 +23,10 @@ class BoatsController < ApplicationController
 
 
 	def edit
-		@boat = Boat.find(params[:id])
+		if user_signed_in? && current_user.admin?
+			@boat = Boat.find(params[:id])
+		else render :file => "/public/404.html", :status => 404
+		end
 	end
 
 
