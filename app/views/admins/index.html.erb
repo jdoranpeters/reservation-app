@@ -2,14 +2,32 @@
 <div class="container-fluid">
 <h1>Admins View</h1>
 
+	<table class="table table-striped table-responsive">
+		<thead>
+			<tr>
+				<th class="bg-primary">Name</th>
+				<th class="bg-primary">Address</th>
+			</tr>
+		</thead>
 	<% @users.each do |user| %>
-		<%= user.first_name %> <%= user.last_name %>
-		<%= user.boat_preference %> 
+		<tbody>
+			<tr>
+				<td><%= user.first_name %> <%= user.last_name %></td>
+				<td><%= user.address %> <%= user.city %>, <%= user.state %> <%= user.zip_code %></td>
+			</tr>
 
+
+		</tbody>
+			<
 
 
 
 <% end %>
+
+	</table>
+
+
+
 
 
 </div>
