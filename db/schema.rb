@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315144620) do
+ActiveRecord::Schema.define(version: 20150315162116) do
 
   create_table "boats", force: :cascade do |t|
     t.string   "image_url",                limit: 255
@@ -76,6 +76,16 @@ ActiveRecord::Schema.define(version: 20150315144620) do
     t.datetime "updated_at"
     t.boolean  "admin",                  limit: 1,   default: false
     t.boolean  "allowed",                limit: 1,   default: false
+    t.string   "first_name",             limit: 255
+    t.string   "last_name",              limit: 255
+    t.string   "address",                limit: 255
+    t.string   "city",                   limit: 255
+    t.string   "state",                  limit: 255
+    t.string   "zip_code",               limit: 255
+    t.string   "phone",                  limit: 255
+    t.string   "boat_preference",        limit: 255
+    t.string   "full_share",             limit: 255
+    t.string   "two_thirds_share",       limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

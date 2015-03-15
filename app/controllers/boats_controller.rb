@@ -6,6 +6,10 @@ class BoatsController < ApplicationController
 
 	def show
  		@boat = Boat.find(params[:id])
+		# need to add this lease notice feature later
+		if @boat.shares_possible < 1
+			flash[:notice] = "Sorry, all the shares for this vessel are taken at this time. Please check back soon."
+ 		end
 	end
 
 
