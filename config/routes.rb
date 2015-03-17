@@ -37,8 +37,7 @@ Rails.application.routes.draw do
 
   resources :admins
 
-  resources :users, only: [:show, :edit, :update]
-
+  resources :users
 
 
 

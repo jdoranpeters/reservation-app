@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315162116) do
+ActiveRecord::Schema.define(version: 20150316235834) do
 
   create_table "boats", force: :cascade do |t|
     t.string   "image_url",                limit: 255
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20150315162116) do
     t.string   "boat_preference",        limit: 255
     t.string   "full_share",             limit: 255
     t.string   "two_thirds_share",       limit: 255
+    t.string   "boat_assigned",          limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
