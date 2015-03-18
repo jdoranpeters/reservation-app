@@ -10,6 +10,8 @@
 				<th class="bg-primary">Boat Assigned</th>
 				<th class="bg-primary">Full Share</th>
 				<th class="bg-primary">2/3rd Share</th>
+				<th class="bg-primary">group_id</th>
+				<th class="bg-primary">group_size</th>
 			</tr>
 		</thead>
 	<% @users.each do |user| %>
@@ -20,7 +22,8 @@
 				<td><%= user.phone %></td>
 				<td><%= user.boat_assigned %></td>
 				<td><%= user.full_share %></td>
-				<td><%= user.two_thirds_share %></td>
+				<td><%= user.two_thirds_share %></td><td><%= user.group_id %></td>
+				<td><%= user.group_size %></td>
 
 			</tr>
 

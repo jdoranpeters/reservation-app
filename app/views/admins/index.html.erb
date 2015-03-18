@@ -3,13 +3,32 @@
 
 <h1>Admins View</h1>
 
-<!-- present status of boats -->
-
-
-<!-- links to updates -->
-
-
-
+  <table class="table table-striped table-bordered table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-primary">Boats </th>
+        <th class="bg-primary">Service Notes</th>
+        <th class="bg-primary">Current Status</th>
+        <th class="bg-primary">One Day Out</th>
+        <th class="bg-primary">Shares Available </th>
+       
+      </tr>
+    </thead>
+    <% @boats.each do |boat| %>
+    <tr>	
+      <td><%= boat.name %></td>
+      <td><%= boat.service_notes %></td>
+      <td><%= boat.current_status %></td>
+      <% if boat.one_day_out %>
+      <td> Reserved </td>
+      <% elsif boat.one_day_out == false %>
+      <td> Available </td> 
+    	<% end %>
+      
+      <td><%= boat.shares_possible %></td>
+    </tr>
+    <% end %>
+  </table>
 
 
 

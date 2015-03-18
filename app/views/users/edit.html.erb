@@ -59,16 +59,22 @@
     <%= label_tag :two_thirds_share %><br />
     <%= text_field_tag :two_thirds_share, @user.two_thirds_share %>
   </div>
-
+  <div class="field">
+    <%= label_tag :group_id %><br />
+    <%= text_field_tag :group_id, @user.group_id %>
+  </div>
+  <div class="field">
+    <%= label_tag :group_size %> <br />
+    <%= text_field_tag :group_size, @user.group_size %>
+  </div>
   <div class="field">
     <%= label_tag :allowed %> true or false?<br />
     <%= text_field_tag :allowed, @user.allowed, :required => true %>
   </div>
-
   <div class="actions">
     <%= submit_tag "Submit Changes", :class => "submit_user_changes" %>
   </div>
-<% end %>
+  <% end %>
 
 
 

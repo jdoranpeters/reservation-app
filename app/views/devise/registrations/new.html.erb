@@ -61,6 +61,15 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  <div class="field">
+    <%= label_tag :group_id %><br />
+    <%= group_id_field_tag :group_id, @group.group_id, :required => true %>
+  </div>
+  <div class="field">
+    <%= label_tag %> <br />
+    <%= group_id_field_tag :group_id, @group.group_id, :required => true %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>

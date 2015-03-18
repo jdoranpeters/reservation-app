@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316235834) do
+ActiveRecord::Schema.define(version: 20150318194638) do
 
   create_table "boats", force: :cascade do |t|
     t.string   "image_url",                limit: 255
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20150316235834) do
     t.string   "make",                     limit: 255
     t.integer  "size",                     limit: 4
     t.integer  "shares_possible",          limit: 4
-    t.decimal  "full_share_price",                     precision: 6, scale: 2
-    t.decimal  "two_thirds_share_price",               precision: 6, scale: 2
+    t.decimal  "full_share_price",                       precision: 6, scale: 2
+    t.decimal  "two_thirds_share_price",                 precision: 6, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "harbor",                   limit: 255
@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20150316235834) do
     t.integer  "full_credit_SUN",          limit: 4
     t.integer  "two_thirds_credits_total", limit: 4
     t.integer  "full_credits_total",       limit: 4
+    t.text     "service_notes",            limit: 65535
+    t.string   "current_status",           limit: 255
+    t.boolean  "one_day_out",              limit: 1,                             default: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -46,6 +49,14 @@ ActiveRecord::Schema.define(version: 20150316235834) do
     t.datetime "end_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "group_id",   limit: 4
+    t.integer  "group_size", limit: 4
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -87,6 +98,8 @@ ActiveRecord::Schema.define(version: 20150316235834) do
     t.string   "full_share",             limit: 255
     t.string   "two_thirds_share",       limit: 255
     t.string   "boat_assigned",          limit: 255
+    t.integer  "group_id",               limit: 4
+    t.integer  "group_size",             limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
