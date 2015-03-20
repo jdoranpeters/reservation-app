@@ -8,7 +8,7 @@ def index
 def show
 	@reservation = Reservation.find(params[:id])
 	# this should connect to each calendar entry
-
+	end
 
 def new
 
