@@ -19,23 +19,33 @@ end
 # end
 
 
-def edit
+	def edit
 		@group = Group.find(params[:id])
 	end
 
 
 	def update
 		@group = Group.find(params[:id])
-		@group.update({:group_id => params[:group_id], :group_size => params[:group_size], :user_id => params[:user_id]})#how will this connect with user_id in Users model?
+		@group.update({:boat_assigned => params[:boat_assigned], :full_share => params[:full_share], :two_thirds_share => params[:two_thirds_share], :credits => params[:credits]})
 		flash[:info] = "Update Complete"
 		redirect_to "/groups" 
 	end
 
 
 	def destroy
+		#admin only
 		@group = Group.find(params[:id])
 		@group.destroy
 		flash[:warning] = "Group Deleted"
 		redirect_to "/groups"
 	end
 end
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
-	belongs_to :admin
+	belongs_to :group
+	has_many :reservations
+	
 	
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

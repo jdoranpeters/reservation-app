@@ -6,18 +6,21 @@
 <table class="table table-striped table-bordered table-responsive">
     <thead>
       <tr>
-        <th class="bg-primary">Group ID</th>
-        <th class="bg-primary">Group Size</th>
-        <th class="bg-primary">User ID</th>
+        <th class="bg-primary">Boat Assigned</th>
+        <th class="bg-primary">Shares</th>
+        <th class="bg-primary">Credits</th>
       </tr>
 		</thead>
 	<% @groups.each do |group| %> 
 	<tbody>
 			<tr>
-				<td><button><a href= "/group/<%= group.id %>/edit"> Edit </a></button>  <%= group.user_id %></td>
-				<td><%= group_size %></td>
-				<td><%= group.group_id %></td>
-			<% end %>
+				<td><button><a href= "/groups/<%= group.id %>/edit"> Edit </a></button>  <%= group.boat_assigned %></td>
+				<% if group.full_share %>
+				<td> Full Share</td>
+				<% else group.two_thirds_share %>
+				<td>Two Thirds Share</td>
+				<% end %>
+				<td><%= group.credits %></td>
 			</tr>
 
 
