@@ -2,7 +2,8 @@ class ReservationsController < ApplicationController
 
 def index
 	@reservations = Reservation.all
-	#backend calendar
+	#@reservations_by_block = @reservations.group_by(&:reserved_on)
+	@date = Date.today
 	end
 
 def show
