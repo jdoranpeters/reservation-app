@@ -55,7 +55,7 @@
     </tr>
   </table>
  
-    <% if current_user.admin? %>
+    <% if user_signed_in? && current_user.admin? %>
   <button><a href="/boats/<%= @boat.id %>/edit">Edit</a></button> <button><a href="/boats/<%= @boat.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete</a></button>
   <% end %>
 </div>

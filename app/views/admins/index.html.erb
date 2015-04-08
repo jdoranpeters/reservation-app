@@ -16,7 +16,7 @@
     </thead>
     <% @boats.each do |boat| %>
     <tr>	
-      <td><%= boat.name %></td>
+      <td><button><a href= "/boats/<%= boat.id %>/edit"> Edit </a></button>  <%= boat.name %></td>
       <td><%= boat.service_notes %></td>
       <td><%= boat.current_status %></td>
       <% if boat.one_day_out %>
