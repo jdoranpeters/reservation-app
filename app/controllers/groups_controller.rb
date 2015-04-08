@@ -10,13 +10,30 @@ end
 
 # end
 
-# def new
+def new
+	@boats = Boat.all 
+	end
 
-# end
+def create
+	@group = Group.create({:credits => params[:credits], :boat_id => params[:boat_id], :two_thirds_share => params[:two_thirds_share], :full_share => params[:full_share]})
+  
+  @current_shares_possible = @group.boat.shares_possible
 
-# def create
+  if @group.save && @group.two_thirds_share?
+  	@new_shares_possible = (@current_shares_possible - 1)
+  	@group.boat.update({:shares_possible => @new_shares_possible})
+  	@group.update({:credits => @group.boat.two_thirds_credits_total})
+  elsif @group.save && @group.full_share?
+  	@new_shares_possible = (@current_shares_possible -1)
+  	@group.boat.update({:shares_possible => @new_shares_possible})
+  	@group.update({:credits => @group.boat.full_credits_total})
 
-# end
+  end
+
+  flash[:success] = "Group Added"
+  	redirect_to '/groups'
+
+end
 
 
 	def edit
