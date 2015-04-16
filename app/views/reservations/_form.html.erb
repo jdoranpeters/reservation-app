@@ -11,8 +11,12 @@
    <%= hidden_field_tag :user_id, current_user.id  %>
    </div>
 
-   <center><h2 class= 'boat_name'>Your Credit Rates for <%= @boat.name %><br> Current Total Credits = <%= @credits %></h2>
-  <h4>Day Block: 9 a.m. - 3 p.m. / Evening Block: 4 p.m. - 8 a.m. next morning / Full Day Block: 9 a.m. - 8 a.m. next morning</h4></center>
+   <center><h2 class= 'boat_name'>Your Credit Rates for <%= @boat.name %><br> Current Total Credits = <%= @credits %></h2><br>
+   <center><h2 class= 'boat_name'>Original Lease Share Package for<%= current_user.first_name%> <%=current_user.last_name%>:<br><%if current_user.group.full_share?%><%=current_user.group.boat.full_credits_total%><%elsif current_user.group.two_thirds_share%><%=current_user.group.boat.two_thirds_credits_total%><%end%> Credits</h2><br>
+  
+
+  <h4>Day Block: 9 a.m. - 3 p.m. / Evening Block: 4 p.m. - 8 a.m. next morning / Full Day Block: 9 a.m. - 8 a.m. next morning</h4></center> <br><br>
+   <center><img src="<%=@boat.image_url%>" width="250" class="img-thumbnail"></center>
   <table class="table table-striped table-bordered table-responsive">
     <tr >
       <th class="bg-primary">Time Blocks</th>

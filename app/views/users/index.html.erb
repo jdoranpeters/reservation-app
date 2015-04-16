@@ -7,8 +7,6 @@
 				<th class="bg-primary">Name</th>
 				<th class="bg-primary">Address</th>
 				<th class="bg-primary">Phone</th>
-				<th class="bg-primary">Boat Assigned</th>
-th>
 				<th class="bg-primary">group_id</th>
 			</tr>
 		</thead>
@@ -18,7 +16,6 @@ th>
 				<td><button><a href= "/users/<%= user.id %>/edit"> Edit </a></button>  <%= user.first_name %> <%= user.last_name %></td>
 				<td><%= user.address %> <%= user.city %>, <%= user.state %> <%= user.zip_code %></td>
 				<td><%= user.phone %></td>
-				<td><%= user.group.boat_assigned %></td>
 				<td><%= user.group_id %></td>
 				
 

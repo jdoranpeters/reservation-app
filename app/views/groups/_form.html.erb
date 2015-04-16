@@ -18,9 +18,20 @@
    <%#= number_field_tag :boat_id  %>
    </div>
 
+   <div class="field">
+   <%= label_tag :captain %><br />
+   <%= text_field_tag :captain  %>
+   </div>
+
+   <div class="field">
+   <%= label_tag :sailing_experience %><br />
+   <%= text_area_tag(:sailing_experience, "", size: "50x10", :required => true )%> 
+  </div>
+
    <% @boats.each do |boat| %>
    <div class="inner_div">
-   <p><%= boat.name %> <%= check_box_tag (:boat_id)  %>  -------- Shares Available <%= boat.shares_possible%> </p>
+   <p><%= boat.name %><br>
+    <%= check_box_tag :boat_id, boat.id  %>  -------- Shares Available <%= boat.shares_possible%> </p>
    </div><br>
 
    <% end %>

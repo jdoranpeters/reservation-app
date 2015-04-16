@@ -62,7 +62,7 @@ def new
 
 	end
 
-def create
+  def create
 	@boat = current_user.group.boat
      @date = Date.today
     @current_credits = current_user.group.credits
@@ -74,55 +74,90 @@ def create
     @weekday = @day.wday
     # puts @weekday.class
   
-    if @reservation.save && @reservation.am_block? && (@weekday == 1||@weekday ==2||@weekday ==3||@weekday == 4)
+    if @reservation.save && @reservation.am_block? && @weekday == 1 
       @new_credit_total = (@current_credits - @boat.half_credit_AM_MTWTH)
       @new_credits_used = (@current_credits_used + @boat.half_credit_AM_MTWTH)
-
-    elsif @reservation.save && @reservation.pm_block? && (@weekday == 1||@weekday ==2||@weekday ==3||@weekday ==4)
+    
+    elsif @reservation.save && @reservation.am_block? && @weekday == 2
+      @new_credit_total = (@current_credits - @boat.half_credit_AM_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.half_credit_AM_MTWTH)
+    
+    elsif @reservation.save && @reservation.am_block? && @weekday == 3
+      @new_credit_total = (@current_credits - @boat.half_credit_AM_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.half_credit_AM_MTWTH)
+    
+    elsif @reservation.save && @reservation.am_block? && @weekday == 4 
+      @new_credit_total = (@current_credits - @boat.half_credit_AM_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.half_credit_AM_MTWTH)
+    
+    elsif @reservation.save && @reservation.pm_block? && @weekday == 1
       @new_credit_total = (@current_credits - @boat.half_credit_PM_MTWTH)
       @new_credits_used = (@current_credits_used + @boat.half_credit_PM_MTWTH)
-
-    elsif @reservation.save && @reservation.full_day_block? && (@weekday == 1||@weekday ==2||@weekday ==3||@weekday ==4)
+    
+    elsif @reservation.save && @reservation.pm_block? && @weekday == 2
+      @new_credit_total = (@current_credits - @boat.half_credit_PM_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.half_credit_PM_MTWTH)
+    
+    elsif @reservation.save && @reservation.pm_block? && @weekday == 3
+      @new_credit_total = (@current_credits - @boat.half_credit_PM_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.half_credit_PM_MTWTH)
+    
+    elsif @reservation.save && @reservation.pm_block? && @weekday == 4 
+      @new_credit_total = (@current_credits - @boat.half_credit_PM_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.half_credit_PM_MTWTH)
+    
+    elsif @reservation.save && @reservation.full_day_block? && @weekday == 1
       @new_credit_total = (@current_credits - @boat.full_credit_MTWTH)
       @new_credits_used = (@current_credits_used + @boat.full_credit_MTWTH)
-
-    elsif @reservation.save && @reservation.am_block? && (@weekday == 5)
+    
+    elsif @reservation.save && @reservation.full_day_block? && @weekday == 2
+      @new_credit_total = (@current_credits - @boat.full_credit_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.full_credit_MTWTH)
+    
+    elsif @reservation.save && @reservation.full_day_block? && @weekday == 3
+      @new_credit_total = (@current_credits - @boat.full_credit_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.full_credit_MTWTH)
+    
+    elsif @reservation.save && @reservation.full_day_block? && @weekday == 4 
+      @new_credit_total = (@current_credits - @boat.full_credit_MTWTH)
+      @new_credits_used = (@current_credits_used + @boat.full_credit_MTWTH)
+    
+    elsif @reservation.save && @reservation.am_block? && @weekday == 5
       @new_credit_total = (@current_credits - @boat.half_credit_AM_F)
       @new_credits_used = (@current_credits_used + @boat.half_credit_AM_F)
-
-    elsif @reservation.save && @reservation.pm_block? && (@weekday == 5)
+    
+    elsif @reservation.save && @reservation.pm_block? && @weekday == 5
       @new_credit_total = (@current_credits - @boat.half_credit_PM_F)
       @new_credits_used = (@current_credits_used + @boat.half_credit_PM_F)
-
-    elsif @reservation.save && @reservation.full_day_block? && (@weekday == 5)
+    
+    elsif @reservation.save && @reservation.full_day_block? && @weekday == 5
       @new_credit_total = (@current_credits - @boat.full_credit_F)
       @new_credits_used = (@current_credits_used + @boat.full_credit_F)
-
-    elsif @reservation.save && @reservation.am_block? && (@weekday == 6)
+    
+    elsif @reservation.save && @reservation.am_block? && @weekday == 6
       @new_credit_total = (@current_credits - @boat.half_credit_AM_SAT)
       @new_credits_used = (@current_credits_used + @boat.half_credit_AM_SAT)
-
-    elsif @reservation.save && @reservation.pm_block? && (@weekday == 6)
+    
+    elsif @reservation.save && @reservation.pm_block? && @weekday == 6
       @new_credit_total = (@current_credits - @boat.half_credit_PM_SAT)
       @new_credits_used = (@current_credits_used + @boat.half_credit_PM_SAT)
-
-    elsif @reservation.save && @reservation.full_day_block? && (@weekday == 6)
+    
+    elsif @reservation.save && @reservation.full_day_block? && @weekday == 6
       @new_credit_total = (@current_credits - @boat.full_credit_SAT)
       @new_credits_used = (@current_credits_used + @boat.full_credit_SAT)
-
-    elsif @reservation.save && @reservation.am_block? && (@weekday == 0)
+    
+    elsif @reservation.save && @reservation.am_block? && @weekday == 0
       @new_credit_total = (@current_credits - @boat.half_credit_AM_SUN)
       @new_credits_used = (@current_credits_used + @boat.half_credit_AM_SUN)
-
-    elsif @reservation.save && @reservation.pm_block? && (@weekday == 0)
+    
+    elsif @reservation.save && @reservation.pm_block? && @weekday == 0
       @new_credit_total = (@current_credits - @boat.half_credit_PM_SUN)
       @new_credits_used = (@current_credits_used + @boat.half_credit_PM_SUN)
-
-    elsif @reservation.save && @reservation.full_day_block? && (@weekday == 0)
+    
+    elsif @reservation.save && @reservation.full_day_block? && @weekday == 0
       @new_credit_total = (@current_credits - @boat.full_credit_SUN)
       @new_credits_used = (@current_credits_used + @boat.full_credit_SUN)
-
-    # else 
+    else 
       
     
     end
@@ -132,14 +167,15 @@ def create
     @group = current_user.group
     @group.update({:credits => @new_credit_total, :credits_used => @new_credits_used})
 
+    UserMailer.reservation_confirmation(@reservation).deliver
 
     flash[:success] = "Reservation added"
     redirect_to '/reservations'
     
-
-    
     
   end
+
+
 def edit
 
 	end

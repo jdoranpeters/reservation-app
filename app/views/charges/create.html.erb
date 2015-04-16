@@ -1,0 +1,13 @@
+<div class="container-fluid">
+
+<h2>Thank you <%= current_user.first_name %>, your payment has been confirmed for <strong>$<%= @amount %>.00</strong>! </h2>
+<p>You may begin to reserve available dates for <%= current_user.group.boat.name %>! as soon as you confirm your reciept of this payment.</p>
+
+
+<div class="actions">
+  
+  <button><a href="http://localhost:3000/boats">Confirm</a></button>
+  
+</div>
+
+</div>

@@ -1,19 +1,23 @@
-<h1>Olson Classic Yacht Fleet</h1>
+<div class= "container-fluid">
+<div class= "logo"> 
+	<center><img src="/assets/Olson.jpg"></a></center>
+<center><h1>Olson Classic Yacht Sail Planner</h1></center><br><br><br>
 	<div class="container-fluid">
 	<div class="row">
 
 		<% @boats.each do |boat| %>
 
    		<div class="col-md-4 col-sm-6">
+	   		<div class="img-thumbnail"> 
+			<center><h2><%=boat.name%></h2>
+				<h4><%=boat.make%> <%=boat.size%>'</h4></center>
    		<a href="/boats/<%=boat.id%>">	
-	   		<div>
-				<h2><%=boat.name%></h2>
-				<h4><%=boat.make%> '<%=boat.size%></h4>
-				<img src="<%=boat.image_url%>" width="300" class: "img-thumbnail">
+				<img src="<%=boat.image_url%>" width="200" class: "img-thumbnail">
 			</div>
 		</a>
 	</div>
   <% end %>
+</div>
 </div>
 </div>
 <br>

@@ -1,33 +1,41 @@
 
-<div class+ "container-fluid"
+<div class= "container-fluid"
 
 <h1>User Groups</h1>
 
 <table class="table table-striped table-bordered table-responsive">
     <thead>
       <tr>
+        <th class="bg-primary">Group ID</th>
+        <th class="bg-primary">Captain</th>
         <th class="bg-primary">Boat Assigned</th>
-        <th class="bg-primary">Shares</th>
+        <th class="bg-primary">Share Plan</th>
         <th class="bg-primary">Credits</th>
+        <th class="bg-primary">Group Members</th>
+        <th class="bg-primary">Sailing Experience</th>
       </tr>
 		</thead>
 	<% @groups.each do |group| %> 
 	<tbody>
 			<tr>
-				<td><button><a href= "/groups/<%= group.id %>/edit"> Edit </a></button>  <%= group.boat_assigned %></td>
+				<td><button><a href= "/groups/<%= group.id %>/edit"> Edit </a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= group.id %></td>
+				<td><%=group.captain %></td>
+				<td><%= group.boat.name%></td>
 				<% if group.full_share %>
 				<td> Full Share</td>
 				<% else group.two_thirds_share %>
 				<td>Two Thirds Share</td>
 				<% end %>
 				<td><%= group.credits %></td>
+				<td>
+					<% group.users.each do |user|%>	
+            <p><%= user.first_name %> <%= user.last_name %><p>
+      	<% end %>
+            </td> 
+        <td><%=group.sailing_experience %></td>
 			</tr>
-
-
 		</tbody>
-
-
 	<% end %>
-
 </table>
 </div>
+

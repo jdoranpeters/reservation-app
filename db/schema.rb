@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408013727) do
+ActiveRecord::Schema.define(version: 20150413232152) do
 
   create_table "boats", force: :cascade do |t|
     t.string   "image_url",                limit: 255
@@ -54,11 +54,13 @@ ActiveRecord::Schema.define(version: 20150408013727) do
   create_table "groups", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "credits",          limit: 4
-    t.boolean  "full_share",       limit: 1, default: false
-    t.boolean  "two_thirds_share", limit: 1, default: false
-    t.integer  "boat_id",          limit: 4
-    t.integer  "credits_used",     limit: 4
+    t.integer  "credits",            limit: 4
+    t.boolean  "full_share",         limit: 1,     default: false
+    t.boolean  "two_thirds_share",   limit: 1,     default: false
+    t.integer  "boat_id",            limit: 4
+    t.integer  "credits_used",       limit: 4
+    t.text     "sailing_experience", limit: 65535
+    t.string   "captain",            limit: 255
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -108,8 +110,11 @@ ActiveRecord::Schema.define(version: 20150408013727) do
     t.string   "state",                  limit: 255
     t.string   "zip_code",               limit: 255
     t.string   "phone",                  limit: 255
-    t.string   "boat_preference",        limit: 255
     t.integer  "group_id",               limit: 4
+    t.string   "confirmation_token",     limit: 255
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email",      limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

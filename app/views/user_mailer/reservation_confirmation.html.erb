@@ -1,0 +1,11 @@
+<h1>Reservation Confirmation</h1>
+
+<p>Hi <%= @reservation.user.first_name %>, thanks for signing up for Olson's Classic Yachts Sail Planner App.</p>
+
+<p>Here are the details of your reservation:</p>
+<p>Boat: <%= @reservation.group.boat.name %></p>
+<p>Reserved For: <%= @reservation.date_reserved.strftime('%A, %b %d')%>, <% if @reservation.am_block?%>AM Block<% elsif @reservation.pm_block?%>PM Block<% elsif @reservation.full_day_block?%>Full Day Block
+	<% end %></p>
+<p>Reserved by: <%= @reservation.user.first_name %> <%= @reservation.user.last_name %></p>
+
+

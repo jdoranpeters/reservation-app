@@ -15,7 +15,7 @@ def new
 	end
 
 def create
-	@group = Group.create({:credits => params[:credits], :boat_id => params[:boat_id], :two_thirds_share => params[:two_thirds_share], :full_share => params[:full_share]})
+	@group = Group.create({:credits => params[:credits], :boat_id => params[:boat_id], :two_thirds_share => params[:two_thirds_share], :full_share => params[:full_share], :captain => params[:captain], :sailing_experience => params[:sailing_experience]})
   
   @current_shares_possible = @group.boat.shares_possible
 
@@ -43,7 +43,7 @@ end
 
 	def update
 		@group = Group.find(params[:id])
-		@group.update({:boat_assigned => params[:boat_assigned], :full_share => params[:full_share], :two_thirds_share => params[:two_thirds_share], :credits => params[:credits]})
+		@group.update({:boat_assigned => params[:boat_assigned], :full_share => params[:full_share], :two_thirds_share => params[:two_thirds_share], :credits => params[:credits], :captain => params[:captain], :sailing_experience => params[:sailing_experience]})
 		flash[:info] = "Update Complete"
 		redirect_to "/groups" 
 	end
